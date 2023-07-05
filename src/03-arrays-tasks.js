@@ -36,15 +36,15 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  const arr = [];
-  let start = 1;
-
-  for (let i = 0; i < len; i += 1) {
-    arr.push(start);
-    start += 2;
+  if (len === 0) {
+    return [];
   }
 
-  return arr;
+  const prevArr = generateOdds(len - 1);
+  const lastNum = prevArr.length === 0 ? 0 : prevArr[prevArr.length - 1];
+  const currentNum = lastNum + 2;
+
+  return [...prevArr, currentNum];
 }
 
 
