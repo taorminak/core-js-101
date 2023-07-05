@@ -38,11 +38,12 @@ function findElement(arr, value) {
 function generateOdds(len) {
   const arr = [];
   let start = 1;
-  arr.length = len;
-  for (let i = 0; i < arr.length; i += 1) {
+
+  for (let i = 0; i < len; i += 1) {
     arr.push(start);
-    start += 1;
+    start += 2;
   }
+
   return arr;
 }
 
